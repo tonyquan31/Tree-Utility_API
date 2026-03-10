@@ -1,0 +1,12 @@
+# MSVC build outputs
+*.obj
+*.exe
+*.dll
+*.lib
+*.exp
+*.pdb
+*.ilk
+
+# Visual Studio files
+.vs/
+*.vcxproj.user
