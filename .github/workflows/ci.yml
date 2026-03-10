@@ -1,0 +1,31 @@
+name: Build C++ Project
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Setup MSVC (Visual Studio Compiler)
+      uses: ilammy/msvc-dev-cmd@v1 
+
+    - name: Run Build Script
+      shell: powershell
+      run: |
+        # Chạy file build của bạn
+        .\build.ps1
+
+    - name: Upload Artifacts (Optional)
+      uses: actions/upload-artifact@v4
+      with:
+        name: Build-Output
+        path: |
+          Tree/mytree.exe
+          TreeAPI/Tree.dll
