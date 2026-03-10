@@ -1,6 +1,5 @@
 # build.ps1
 Write-Host "--- Checking Environment ---" -ForegroundColor Cyan
-& "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\Launch-VsDevShell.ps1"
 
 if (!(Get-Command cl -ErrorAction SilentlyContinue)) {
     Write-Host "Error: cl.exe not found. Use 'Developer PowerShell for VS 2022'!" -ForegroundColor Red
@@ -11,7 +10,7 @@ if (!(Get-Command cl -ErrorAction SilentlyContinue)) {
 if (Test-Path "Tree\Tree.cpp") {
     Write-Host "Building CLI tool in Tree/..." -ForegroundColor Yellow
     Push-Location Tree
-    cl /std:c++17 /EHsc /utf-8 Tree.cpp /out:mytree.exe
+    cl /std:c++17 /EHsc /utf-8 Tree.cpp /out:Tree.exe
     Pop-Location
 } else {
     Write-Host "Error: Tree\Tree.cpp not found!" -ForegroundColor Red

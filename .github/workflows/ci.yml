@@ -20,7 +20,7 @@ jobs:
       shell: powershell
       run: |
         # Chạy file build của bạn
-        .\build.ps1
+        ./Tree/build.ps1
 
     - name: Upload Artifacts (Optional)
       uses: actions/upload-artifact@v4
